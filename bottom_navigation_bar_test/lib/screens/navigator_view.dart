@@ -29,6 +29,29 @@ class _NavigatorViewState extends State<NavigatorView> {
         index: indexScreen,
         children: myWidget,
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.post_add),
+            label: 'My Posts',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+        ],
+        currentIndex: indexScreen,
+        selectedItemColor: Colors.cyan,
+        onTap: (index) {
+          setState(() {
+            indexScreen = index;
+          });
+        },
+      ),
     );
   }
 }
